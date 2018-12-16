@@ -1,0 +1,629 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+
+  <style>
+
+  #makespace {
+    margin-left: 10px;
+  }
+
+  .section {
+    padding-bottom: 10px;
+  }
+
+  .section a.thmb {
+    padding: 0px 10px;
+    margin: 3px;
+    border: 2px solid;
+    text-decoration: none;
+    color: blue;
+    border-color:black;
+
+  }
+
+  .footer {
+  right: 0;
+  bottom: 10px;
+  left: 0;
+  text-align: center;
+  font-size:small; 
+  color:gray;
+  background: white;
+  border-radius: 15px;
+  width: 700px;
+  margin: 0 auto;
+  opacity: 0.5;
+  padding: 10px;
+}
+</style>
+
+  <meta charset="utf-8">
+
+  <link rel="shortcut icon" href="jbrhicon.png">
+
+  <title>Diagraming the Rock Cycle</title>
+</head>
+
+<body>
+
+  <div class="fullpage">
+
+    
+
+  <div class="section">
+
+    <h3>Drag icons into canvas to show the formation of quartzite. </h3> 
+  
+      <a class="thmb" href="#" onclick="Addtext1()" style="padding: 0px 10px;margin:5px;border: 2px solid;text-decoration: none; color:blue; border-color:black;">Add text</a>
+
+      <a class="thmb" href="#" onclick="enableFreeDrawing1()" style="padding: 0px 10px;margin:5px;border: 2px solid; text-decoration: none; color:blue; border-color:black;">Draw mode</a>
+ 
+      <a class="thmb" href="#" onclick="enableSelection1()" style="padding: 0px 10px; margin:5px;border: 2px solid;text-decoration: none; color:blue; border-color:black;">Select mode</a>
+
+      <a class="thmb" href="#" onClick="deleteObjects1()" style="padding: 0px 10px;margin:5px;border: 2px solid;text-decoration: none; color:blue; border-color:black;">Delete selection</a>
+
+      <a class="thmb" href="#" onClick="deleteCanvas1()" class="btn btn-info" style="padding: 0px 10px;margin:5px;border: 2px solid;text-decoration: none; color:blue; border-color:black;">Clear canvas</a>
+
+      <a class="thmb" href="#" id="lnkDownload1" style="padding: 0px 10px;margin:5px;border: 2px solid;text-decoration: none; color:blue; border-color:black;">Save image</a>
+
+       <!-- <a>
+          <label for="canvas-background-picker">Canvas color:</label>
+          <input type="color" id="bg_color1" value="#ffffff">
+        </a>
+
+        <a id="makespace">Upload file&nbsp;<input type="file" id="jsonload1" /></a> -->
+
+
+     
+      <div class="canvas-container1">
+          <canvas id="canvas1" style="border: 2px solid; margin-top: 8px;" width="900" height="300"></canvas>
+      </div>
+
+      <br>
+
+      <a>
+          <label for="canvas-background-picker">Canvas color:</label>
+          <input type="color" id="bg_color1" value="#ffffff">
+        </a>
+
+        <a id="makespace">Upload file&nbsp;<input type="file" id="jsonload1" /></a>
+
+      <br></br>
+
+      <h3>Drag icons into canvas to show the formation of gneiss. </h3> 
+
+      <a class="thmb" href="#" onclick="Addtext2()" style="padding: 0px 10px;margin:5px;border: 2px solid;text-decoration: none; color:blue; border-color:black;">Add text</a>
+
+      <a class="thmb" href="#" onclick="enableFreeDrawing2()" style="padding: 0px 10px;margin:5px;border: 2px solid; text-decoration: none; color:blue; border-color:black;">Draw mode</a>
+ 
+      <a class="thmb" href="#" onclick="enableSelection2()" style="padding: 0px 10px; margin:5px;border: 2px solid;text-decoration: none; color:blue; border-color:black;">Select mode</a>
+
+      <a class="thmb" href="#" onClick="deleteObjects2()" style="padding: 0px 10px;margin:5px;border: 2px solid;text-decoration: none; color:blue; border-color:black;">Delete selection</a>
+
+      <a class="thmb" href="#" onClick="deleteCanvas2()" class="btn btn-info" style="padding: 0px 10px;margin:5px;border: 2px solid;text-decoration: none; color:blue; border-color:black;">Clear canvas</a>
+
+      <a class="thmb" href="#" id="lnkDownload2" style="padding: 0px 10px;margin:5px;border: 2px solid;text-decoration: none; color:blue; border-color:black;">Save image</a>
+
+       
+
+      <div class="canvas-container2">
+          <canvas id="canvas2" style="border: 2px solid; margin-top: 8px;" width="900" height="300"></canvas>
+      </div>
+      <br>
+
+      <a>
+          <label for="canvas-background-picker">Canvas color:</label>
+          <input type="color" id="bg_color2" value="#ffffff">
+        </a>
+
+        <a id="makespace">Upload file&nbsp;<input type="file" id="jsonload2" /></a>
+      
+      <div class="icons" style="padding: 20px;border: 2px solid;margin-top: 18px;width: 1160px">
+
+
+          <img crossOrigin="Anonymous" draggable="true" src="calciumcarbonate.png" width="100">
+          <img crossOrigin="Anonymous" draggable="true" src="schist.png" width="110">
+          <img crossOrigin="Anonymous" draggable="true" src="basalt.png" width="120">
+          <img crossOrigin="Anonymous" draggable="true" src="marble.png" width="150">
+          <img crossOrigin="Anonymous" draggable="true" src="clay.png" width="140">
+          <img crossOrigin="Anonymous" draggable="true" src="slate.png" width="160">
+          <img crossOrigin="Anonymous" draggable="true" src="sandstone.png" width="140">
+          <img crossOrigin="Anonymous" draggable="true" src="gneiss.png" width="150">
+          <img crossOrigin="Anonymous" draggable="true" src="shale.png" width="120">
+          <img crossOrigin="Anonymous" draggable="true" src="quartzite.png" width="155">
+          <img crossOrigin="Anonymous" draggable="true" src="granite.png" width="130">
+          <img crossOrigin="Anonymous" draggable="true" src="conglomerate.png" width="130">
+          <img crossOrigin="Anonymous" draggable="true" src="obsidian.png" width="120">
+          <img crossOrigin="Anonymous" draggable="true" src="limestone.png" width="140">
+          <img crossOrigin="Anonymous" draggable="true" src="lava.png" width="135">
+          <img crossOrigin="Anonymous" draggable="true" src="sand.png" width="130">
+
+          
+      </div>
+
+      <!-- <div class="terms" style="padding: 20px;border: 2px solid;margin-top: 18px;width: 1160px">
+          <img crossOrigin="Anonymous" draggable="true" src="erosion.png" width="100">
+          
+      </div> -->
+
+  </div>
+
+</div>
+<br></br>
+
+<p class="footer">
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Rock Cycle Diagramming</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.physics.drexel.edu/~tim" property="cc:attributionName" rel="cc:attributionURL">Jenny Hoffman</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+<br/>
+This page uses Fabric.js and JQuery.
+</p>
+
+</body>
+</html>
+
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/fabric.js/1.7.22/fabric.min.js'></script>
+
+<!-- <script src="https://rawgit.com/kangax/fabric.js/master/dist/fabric.js"></script> -->
+
+
+<script>
+function initCanvas1() {
+  $('.canvas-container1').each(function(index) {
+    var canvasContainer = $(this)[0];
+    var canvasObject = $("canvas", this)[0];
+    var imageOffsetX, imageOffsetY;
+
+    function handleDragStartIcons(e) {
+      [].forEach.call(imagesIcons, function(img) {
+        img.classList.remove('img_dragging');
+      });
+      this.classList.add('img_dragging');
+      var imageOffset = $(this).offset();
+      imageOffsetX = e.clientX - imageOffset.left;
+      imageOffsetY = e.clientY - imageOffset.top;
+    }
+    
+    function handleDragOver(e) {
+      if (e.preventDefault) {
+        e.preventDefault();
+      }
+      e.dataTransfer.dropEffect = 'copy';
+      return false;
+    }
+    function handleDragEnter(e) {
+      this.classList.add('over');
+    }
+    function handleDragLeave(e) {
+      this.classList.remove('over');
+    }
+    function handleDropIcons(e) {
+      e = e || window.event;
+      if (e.preventDefault) {
+        e.preventDefault();
+      }
+      if (e.stopPropagation) {
+        e.stopPropagation();
+      }
+      var img = document.querySelector('.icons img.img_dragging');
+      console.log('event: ', e);
+      var offset = $(canvasObject).offset();
+      var y = e.clientY - (offset.top + imageOffsetY);
+      var x = e.clientX - (offset.left + imageOffsetX);
+      var newImage = new fabric.Image(img, {
+        //width: '100px',
+        //height: img.height,
+        left: x,
+        top: y
+      });
+      canvas1.add(newImage);
+      return false;
+    }
+    
+    function handleDragEndIcons(e) {
+      [].forEach.call(imagesIcons, function(img) {
+        img.classList.remove('img_dragging');
+      });
+    }
+    
+  
+    var imagesIcons = document.querySelectorAll('.icons img');
+    [].forEach.call(imagesIcons, function(img) {
+      img.addEventListener('dragstart', handleDragStartIcons, false);
+      img.addEventListener('dragend', handleDragEndIcons, false);
+    });
+    
+    
+    canvasContainer.addEventListener('dragenter', handleDragEnter, false);
+    canvasContainer.addEventListener('dragover', handleDragOver, false);
+    canvasContainer.addEventListener('dragleave', handleDragLeave, false);
+    canvasContainer.addEventListener('drop', handleDropIcons, false);
+  });
+}
+initCanvas1();
+
+
+function initCanvas2() {
+  $('.canvas-container2').each(function(index) {
+    var canvasContainer = $(this)[0];
+    var canvasObject = $("canvas", this)[0];
+    var imageOffsetX, imageOffsetY;
+
+    function handleDragStartIcons(e) {
+      [].forEach.call(imagesIcons, function(img) {
+        img.classList.remove('img_dragging');
+      });
+      this.classList.add('img_dragging');
+      var imageOffset = $(this).offset();
+      imageOffsetX = e.clientX - imageOffset.left;
+      imageOffsetY = e.clientY - imageOffset.top;
+    }
+    
+    function handleDragOver(e) {
+      if (e.preventDefault) {
+        e.preventDefault();
+      }
+      e.dataTransfer.dropEffect = 'copy';
+      return false;
+    }
+    function handleDragEnter(e) {
+      this.classList.add('over');
+    }
+    function handleDragLeave(e) {
+      this.classList.remove('over');
+    }
+    function handleDropIcons(e) {
+      e = e || window.event;
+      if (e.preventDefault) {
+        e.preventDefault();
+      }
+      if (e.stopPropagation) {
+        e.stopPropagation();
+      }
+      var img = document.querySelector('.icons img.img_dragging');
+      console.log('event: ', e);
+      var offset = $(canvasObject).offset();
+      var y = e.clientY - (offset.top + imageOffsetY);
+      var x = e.clientX - (offset.left + imageOffsetX);
+      var newImage = new fabric.Image(img, {
+        //width: '100px',
+        //height: img.height,
+        left: x,
+        top: y
+      });
+      canvas2.add(newImage);
+      return false;
+    }
+    
+    function handleDragEndIcons(e) {
+      [].forEach.call(imagesIcons, function(img) {
+        img.classList.remove('img_dragging');
+      });
+    }
+    
+  
+    var imagesIcons = document.querySelectorAll('.icons img');
+    [].forEach.call(imagesIcons, function(img) {
+      img.addEventListener('dragstart', handleDragStartIcons, false);
+      img.addEventListener('dragend', handleDragEndIcons, false);
+    });
+    
+    
+    canvasContainer.addEventListener('dragenter', handleDragEnter, false);
+    canvasContainer.addEventListener('dragover', handleDragOver, false);
+    canvasContainer.addEventListener('dragleave', handleDragLeave, false);
+    canvasContainer.addEventListener('drop', handleDropIcons, false);
+  });
+}
+initCanvas2();
+
+
+
+
+
+var canvas1 = new fabric.Canvas('canvas1', {
+       selection: false
+    });
+
+var canvas2 = new fabric.Canvas('canvas2', {
+       selection: false
+    });
+
+
+$('#bg_color1').on('input', function() { 
+          canvas1.backgroundColor = $('#bg_color1').val();
+          canvas1.renderAll();
+        });
+
+$('#bg_color2').on('input', function() { 
+          canvas2.backgroundColor = $('#bg_color2').val();
+          canvas2.renderAll();
+        });
+
+var line, isDown;
+
+function Addtext1() {
+   var fabText = new fabric.IText('', {
+      left: 20,
+      top: 20,
+      fontFamily: 'tahoma',
+      fill: '#0000000',
+      stroke: '#000000',
+      strokeWidth: 0.2,
+      fontSize: 18,
+      charSpacing: 50,
+      fontWeight: 400
+   });
+   canvas1.add(fabText);
+   canvas1.setActiveObject(fabText);
+   fabText.enterEditing()
+   fabText.hiddenTextarea.focus();
+   
+}
+
+function Addtext2() {
+   var fabText = new fabric.IText('', {
+      left: 20,
+      top: 20,
+      fontFamily: 'tahoma',
+      fill: '#0000000',
+      stroke: '#000000',
+      strokeWidth: 0.2,
+      fontSize: 18,
+      charSpacing: 50,
+      fontWeight: 400
+   });
+   canvas2.add(fabText);
+   canvas2.setActiveObject(fabText);
+   fabText.enterEditing()
+   fabText.hiddenTextarea.focus();
+   
+}
+
+canvas1.on("text:editing:entered", clearText);
+function clearText(e) {
+  if (e.target.type === "i-text") {
+    if (e.target.text === "tap and type") {
+      e.target.text = "";
+      canvas1.renderAll();
+    };
+  }
+}
+
+canvas2.on("text:editing:entered", clearText);
+function clearText(e) {
+  if (e.target.type === "i-text") {
+    if (e.target.text === "tap and type") {
+      e.target.text = "";
+      canvas2.renderAll();
+    };
+  }
+}
+
+function enableFreeDrawing1(){
+  removeEvents1();
+  canvas1.isDrawingMode = true;
+  canvas1.freeDrawingBrush.color = "black";
+  canvas1.freeDrawingBrush.width = 4;
+  canvas1.renderAll();
+}
+
+function enableFreeDrawing2(){
+  removeEvents2();
+  canvas2.isDrawingMode = true;
+  canvas2.freeDrawingBrush.color = "black";
+  canvas2.freeDrawingBrush.width = 4;
+  canvas2.renderAll();
+}
+
+function enableSelection1() {
+  removeEvents1();
+  changeObjectSelection(true);
+  canvas1.selection = true;
+}
+
+function enableSelection2() {
+  removeEvents2();
+  changeObjectSelection(true);
+  canvas2.selection = true;
+}
+
+function changeObjectSelection1(value) {
+  canvas1.forEachObject(function (obj) {
+    obj.selectable = value;
+  });
+  canvas1.renderAll();
+}
+
+function changeObjectSelection2(value) {
+  canvas2.forEachObject(function (obj) {
+    obj.selectable = value;
+  });
+  canvas2.renderAll();
+}
+
+function removeEvents1() {
+  canvas1.isDrawingMode = false;
+  canvas1.selection = false;
+  canvas1.off('mouse:down');
+  canvas1.off('mouse:up');
+  canvas1.off('mouse:move');
+}
+
+function removeEvents2() {
+  canvas2.isDrawingMode = false;
+  canvas2.selection = false;
+  canvas2.off('mouse:down');
+  canvas2.off('mouse:up');
+  canvas2.off('mouse:move');
+}
+
+function deleteCanvas1() {
+  if (confirm('Are you sure?')) {
+  canvas1.clear();
+  }
+}
+
+function deleteCanvas2() {
+  if (confirm('Are you sure?')) {
+  canvas2.clear();
+  }
+}
+
+function deleteObjects1(){
+  var activeObject = canvas1.getActiveObject(),
+    activeGroup = canvas1.getActiveGroup();
+    if (activeObject) {
+            canvas1.remove(activeObject);
+        
+    }
+    else if (activeGroup) {
+        
+            var objectsInGroup = activeGroup.getObjects();
+            canvas1.discardActiveGroup();
+            objectsInGroup.forEach(function(object) {
+            canvas1.remove(object);
+            });
+        
+    }
+}
+
+function deleteObjects2(){
+  var activeObject = canvas2.getActiveObject(),
+    activeGroup = canvas2.getActiveGroup();
+    if (activeObject) {
+        
+            canvas2.remove(activeObject);
+        
+    }
+    else if (activeGroup) {
+        
+            var objectsInGroup = activeGroup.getObjects();
+            canvas2.discardActiveGroup();
+            objectsInGroup.forEach(function(object) {
+            canvas2.remove(object);
+            });
+        
+    }
+}
+
+function handleImage1(e) {
+    var objects = canvas1.getObjects();
+    for (var i in objects) {
+       objects[i].remove();
+    }
+    var reader = new FileReader();
+    reader.onload = function (event) {
+        var img = new Image();
+        img.onload = function () {
+            var imgInstance = new fabric.Image(img, {
+               selectable: 1
+            })
+            canvas1.add(imgInstance);
+            canvas1.deactivateAll().renderAll();
+        }
+        img.src = event.target.result;
+    }
+    reader.readAsDataURL(e.target.files[0]);
+}
+
+function handleImage2(e) {
+    var objects = canvas2.getObjects();
+    for (var i in objects) {
+       objects[i].remove();
+    }
+    var reader = new FileReader();
+    reader.onload = function (event) {
+        var img = new Image();
+        img.onload = function () {
+            var imgInstance = new fabric.Image(img, {
+               selectable: 1
+            })
+            canvas2.add(imgInstance);
+            canvas2.deactivateAll().renderAll();
+        }
+        img.src = event.target.result;
+    }
+    reader.readAsDataURL(e.target.files[0]);
+}
+
+var imageSaver1 = document.getElementById('lnkDownload1');
+
+imageSaver1.addEventListener('click', saveImage1, false);
+
+function saveImage1(e) {
+    this.href = canvas1.toDataURL({
+        format: 'png',
+        quality: 0.8
+    });
+    this.download = 'canvas1.png'
+}
+
+var imageSaver2 = document.getElementById('lnkDownload2');
+
+imageSaver2.addEventListener('click', saveImage2, false);
+
+function saveImage2(e) {
+    this.href = canvas2.toDataURL({
+        format: 'png',
+        quality: 0.8
+    });
+    this.download = 'canvas2.png'
+}
+
+$("#jsonDownload1").click(function() {
+    var json = canvas1.toJSON();
+    /*$("#myTextArea").text(JSON.stringify(json));
+    var a = document.createElement("a");*/
+    var file = new Blob([JSON.stringify(json)], {
+      type: 'text/plain'
+    });
+    this.href = URL.createObjectURL(file);
+    this.download = 'json.txt';
+    //a.click();
+  });
+
+$("#jsonDownload2").click(function() {
+    var json = canvas2.toJSON();
+    var file = new Blob([JSON.stringify(json)], {
+      type: 'text/plain'
+    });
+    this.href = URL.createObjectURL(file);
+    this.download = 'json.txt';
+    //a.click();
+  });
+
+$('#jsonload1').change(function(e) {
+    var file = e.target.files[0];
+    if(!file) return;
+    var reader = new FileReader();
+    reader.onload = function(f) {
+      var data = f.target.result;
+      canvas1.loadFromJSON(
+      JSON.parse(data),
+      canvas1.renderAll.bind(canvas1));
+    };
+    reader.readAsText(file);
+    });
+    $(this).val(null);
+
+  $('#jsonload2').change(function(e) {
+    var file = e.target.files[0];
+    if(!file) return;
+    var reader = new FileReader();
+    reader.onload = function(f) {
+      var data = f.target.result;
+      canvas2.loadFromJSON(
+      JSON.parse(data),
+      canvas2.renderAll.bind(canvas2));
+    };
+    reader.readAsText(file);
+    });
+    $(this).val(null);
+</script>
