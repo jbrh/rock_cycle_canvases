@@ -3,16 +3,30 @@
 <html lang="en">
 <head>
 
-  <style>
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
 
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/fabric.js/1.7.22/fabric.min.js'></script>
+
+<!-- <script src="https://rawgit.com/kangax/fabric.js/master/dist/fabric.js"></script> -->
+
+  <!-- Latest compiled and minified CSS -->
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<style>
   #makespace {
     margin-left: 10px;
   }
-
   .section {
     padding-bottom: 10px;
   }
-
   .section a.thmb {
     padding: 0px 10px;
     margin: 3px;
@@ -20,9 +34,7 @@
     text-decoration: none;
     color: blue;
     border-color:black;
-
   }
-
   .footer {
   right: 0;
   bottom: 10px;
@@ -48,13 +60,22 @@
 
 <body>
 
-  <div class="fullpage">
 
-    
+<div id="exTab1" class="container"> 
+  <ul  class="nav nav-tabs">
+      <li class="active">
+        <a  href="#1a" data-toggle="tab">One</a>
+      </li>
+      <li><a href="#2a" data-toggle="tab">Two</a>
+      </li>
+      
+    </ul>
 
-  <div class="section">
+      <div class="tab-content clearfix">
+          <div class="tab-pane active" id="1a">
 
-    <h3>Drag icons into canvas to show the formation of quartzite. </h3> 
+
+           <h3>Drag icons into canvas to show the formation of quartzite. </h3> 
   
       <a class="thmb" href="#" onclick="Addtext1()" style="padding: 0px 10px;margin:5px;border: 2px solid;text-decoration: none; color:blue; border-color:black;">Add text</a>
 
@@ -68,31 +89,27 @@
 
       <a class="thmb" href="#" id="lnkDownload1" style="padding: 0px 10px;margin:5px;border: 2px solid;text-decoration: none; color:blue; border-color:black;">Save image</a>
 
-       <!-- <a>
-          <label for="canvas-background-picker">Canvas color:</label>
-          <input type="color" id="bg_color1" value="#ffffff">
-        </a>
-
-        <a id="makespace">Upload file&nbsp;<input type="file" id="jsonload1" /></a> -->
-
-
+      
      
       <div class="canvas-container1">
-          <canvas id="canvas1" style="border: 2px solid; margin-top: 8px;" width="900" height="300"></canvas>
+          <canvas id="canvas1" style="border: 2px solid; margin-top: 8px;" width="1000" height="300"></canvas>
       </div>
 
       <br>
 
-      <a>
+        <a>
           <label for="canvas-background-picker">Canvas color:</label>
           <input type="color" id="bg_color1" value="#ffffff">
         </a>
 
         <a id="makespace">Upload file&nbsp;<input type="file" id="jsonload1" /></a>
 
-      <br></br>
 
-      <h3>Drag icons into canvas to show the formation of gneiss. </h3> 
+          </div>
+          <div class="tab-pane" id="2a">
+
+
+            <h3>Drag icons into canvas to show the formation of gneiss. </h3> 
 
       <a class="thmb" href="#" onclick="Addtext2()" style="padding: 0px 10px;margin:5px;border: 2px solid;text-decoration: none; color:blue; border-color:black;">Add text</a>
 
@@ -109,7 +126,7 @@
        
 
       <div class="canvas-container2">
-          <canvas id="canvas2" style="border: 2px solid; margin-top: 8px;" width="900" height="300"></canvas>
+          <canvas id="canvas2" style="border: 2px solid; margin-top: 8px;" width="1000" height="300"></canvas>
       </div>
       <br>
 
@@ -119,39 +136,39 @@
         </a>
 
         <a id="makespace">Upload file&nbsp;<input type="file" id="jsonload2" /></a>
-      
-      <div class="icons" style="padding: 20px;border: 2px solid;margin-top: 18px;width: 1160px">
 
 
-          <img crossOrigin="Anonymous" draggable="true" src="calciumcarbonate.png" width="100">
-          <img crossOrigin="Anonymous" draggable="true" src="schist.png" width="110">
-          <img crossOrigin="Anonymous" draggable="true" src="basalt.png" width="120">
-          <img crossOrigin="Anonymous" draggable="true" src="marble.png" width="150">
-          <img crossOrigin="Anonymous" draggable="true" src="clay.png" width="140">
-          <img crossOrigin="Anonymous" draggable="true" src="slate.png" width="160">
-          <img crossOrigin="Anonymous" draggable="true" src="sandstone.png" width="140">
-          <img crossOrigin="Anonymous" draggable="true" src="gneiss.png" width="150">
-          <img crossOrigin="Anonymous" draggable="true" src="shale.png" width="120">
-          <img crossOrigin="Anonymous" draggable="true" src="quartzite.png" width="155">
-          <img crossOrigin="Anonymous" draggable="true" src="granite.png" width="130">
-          <img crossOrigin="Anonymous" draggable="true" src="conglomerate.png" width="130">
-          <img crossOrigin="Anonymous" draggable="true" src="obsidian.png" width="120">
-          <img crossOrigin="Anonymous" draggable="true" src="limestone.png" width="140">
-          <img crossOrigin="Anonymous" draggable="true" src="lava.png" width="135">
-          <img crossOrigin="Anonymous" draggable="true" src="sand.png" width="130">
+          </div>
+        
+      </div>
+  
+  </div>
+
+<div class="container">
+
+
+  <div class="icons" style="padding: 20px;border: 2px solid;margin-top: 18px;width: 1000px">
+
+
+          <img crossOrigin="Anonymous" draggable="true" src="calciumcarbonate.png" width="70">
+          <img crossOrigin="Anonymous" draggable="true" src="schist.png" width="70">
+          <img crossOrigin="Anonymous" draggable="true" src="basalt.png" width="70">
+          <img crossOrigin="Anonymous" draggable="true" src="marble.png" width="70">
+          <img crossOrigin="Anonymous" draggable="true" src="clay.png" width="70">
+          <img crossOrigin="Anonymous" draggable="true" src="slate.png" width="70">
+          <img crossOrigin="Anonymous" draggable="true" src="sandstone.png" width="70">
+          <img crossOrigin="Anonymous" draggable="true" src="gneiss.png" width="70">
+          <img crossOrigin="Anonymous" draggable="true" src="shale.png" width="70">
+          <img crossOrigin="Anonymous" draggable="true" src="quartzite.png" width="70">
+          <img crossOrigin="Anonymous" draggable="true" src="granite.png" width="70">
+          <img crossOrigin="Anonymous" draggable="true" src="conglomerate.png" width="70">
+          <img crossOrigin="Anonymous" draggable="true" src="obsidian.png" width="70">
+          <img crossOrigin="Anonymous" draggable="true" src="limestone.png" width="70">
+          <img crossOrigin="Anonymous" draggable="true" src="lava.png" width="70">
+          <img crossOrigin="Anonymous" draggable="true" src="sand.png" width="70">
 
           
       </div>
-
-      <!-- <div class="terms" style="padding: 20px;border: 2px solid;margin-top: 18px;width: 1160px">
-          <img crossOrigin="Anonymous" draggable="true" src="erosion.png" width="100">
-          
-      </div> -->
-
-  </div>
-
-</div>
-<br></br>
 
 <p class="footer">
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Rock Cycle Diagramming</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.physics.drexel.edu/~tim" property="cc:attributionName" rel="cc:attributionURL">Jenny Hoffman</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
@@ -159,16 +176,16 @@
 This page uses Fabric.js and JQuery.
 </p>
 
+</div>
+
+
 </body>
 </html>
 
 
-<script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
 
-<script src='https://cdnjs.cloudflare.com/ajax/libs/fabric.js/1.7.22/fabric.min.js'></script>
+
+<!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/fabric.js/1.7.22/fabric.min.js'></script> -->
 
 <!-- <script src="https://rawgit.com/kangax/fabric.js/master/dist/fabric.js"></script> -->
 
@@ -179,7 +196,6 @@ function initCanvas1() {
     var canvasContainer = $(this)[0];
     var canvasObject = $("canvas", this)[0];
     var imageOffsetX, imageOffsetY;
-
     function handleDragStartIcons(e) {
       [].forEach.call(imagesIcons, function(img) {
         img.classList.remove('img_dragging');
@@ -247,14 +263,11 @@ function initCanvas1() {
   });
 }
 initCanvas1();
-
-
 function initCanvas2() {
   $('.canvas-container2').each(function(index) {
     var canvasContainer = $(this)[0];
     var canvasObject = $("canvas", this)[0];
     var imageOffsetX, imageOffsetY;
-
     function handleDragStartIcons(e) {
       [].forEach.call(imagesIcons, function(img) {
         img.classList.remove('img_dragging');
@@ -322,32 +335,21 @@ function initCanvas2() {
   });
 }
 initCanvas2();
-
-
-
-
-
 var canvas1 = new fabric.Canvas('canvas1', {
        selection: false
     });
-
 var canvas2 = new fabric.Canvas('canvas2', {
        selection: false
     });
-
-
 $('#bg_color1').on('input', function() { 
           canvas1.backgroundColor = $('#bg_color1').val();
           canvas1.renderAll();
         });
-
 $('#bg_color2').on('input', function() { 
           canvas2.backgroundColor = $('#bg_color2').val();
           canvas2.renderAll();
         });
-
 var line, isDown;
-
 function Addtext1() {
    var fabText = new fabric.IText('', {
       left: 20,
@@ -366,7 +368,6 @@ function Addtext1() {
    fabText.hiddenTextarea.focus();
    
 }
-
 function Addtext2() {
    var fabText = new fabric.IText('', {
       left: 20,
@@ -385,7 +386,6 @@ function Addtext2() {
    fabText.hiddenTextarea.focus();
    
 }
-
 canvas1.on("text:editing:entered", clearText);
 function clearText(e) {
   if (e.target.type === "i-text") {
@@ -395,7 +395,6 @@ function clearText(e) {
     };
   }
 }
-
 canvas2.on("text:editing:entered", clearText);
 function clearText(e) {
   if (e.target.type === "i-text") {
@@ -405,7 +404,6 @@ function clearText(e) {
     };
   }
 }
-
 function enableFreeDrawing1(){
   removeEvents1();
   canvas1.isDrawingMode = true;
@@ -413,7 +411,6 @@ function enableFreeDrawing1(){
   canvas1.freeDrawingBrush.width = 4;
   canvas1.renderAll();
 }
-
 function enableFreeDrawing2(){
   removeEvents2();
   canvas2.isDrawingMode = true;
@@ -421,33 +418,28 @@ function enableFreeDrawing2(){
   canvas2.freeDrawingBrush.width = 4;
   canvas2.renderAll();
 }
-
 function enableSelection1() {
   removeEvents1();
   changeObjectSelection(true);
   canvas1.selection = true;
 }
-
 function enableSelection2() {
   removeEvents2();
   changeObjectSelection(true);
   canvas2.selection = true;
 }
-
 function changeObjectSelection1(value) {
   canvas1.forEachObject(function (obj) {
     obj.selectable = value;
   });
   canvas1.renderAll();
 }
-
 function changeObjectSelection2(value) {
   canvas2.forEachObject(function (obj) {
     obj.selectable = value;
   });
   canvas2.renderAll();
 }
-
 function removeEvents1() {
   canvas1.isDrawingMode = false;
   canvas1.selection = false;
@@ -455,7 +447,6 @@ function removeEvents1() {
   canvas1.off('mouse:up');
   canvas1.off('mouse:move');
 }
-
 function removeEvents2() {
   canvas2.isDrawingMode = false;
   canvas2.selection = false;
@@ -463,19 +454,16 @@ function removeEvents2() {
   canvas2.off('mouse:up');
   canvas2.off('mouse:move');
 }
-
 function deleteCanvas1() {
   if (confirm('Are you sure?')) {
   canvas1.clear();
   }
 }
-
 function deleteCanvas2() {
   if (confirm('Are you sure?')) {
   canvas2.clear();
   }
 }
-
 function deleteObjects1(){
   var activeObject = canvas1.getActiveObject(),
     activeGroup = canvas1.getActiveGroup();
@@ -493,7 +481,6 @@ function deleteObjects1(){
         
     }
 }
-
 function deleteObjects2(){
   var activeObject = canvas2.getActiveObject(),
     activeGroup = canvas2.getActiveGroup();
@@ -512,7 +499,6 @@ function deleteObjects2(){
         
     }
 }
-
 function handleImage1(e) {
     var objects = canvas1.getObjects();
     for (var i in objects) {
@@ -532,7 +518,6 @@ function handleImage1(e) {
     }
     reader.readAsDataURL(e.target.files[0]);
 }
-
 function handleImage2(e) {
     var objects = canvas2.getObjects();
     for (var i in objects) {
@@ -552,11 +537,8 @@ function handleImage2(e) {
     }
     reader.readAsDataURL(e.target.files[0]);
 }
-
 var imageSaver1 = document.getElementById('lnkDownload1');
-
 imageSaver1.addEventListener('click', saveImage1, false);
-
 function saveImage1(e) {
     this.href = canvas1.toDataURL({
         format: 'png',
@@ -564,11 +546,8 @@ function saveImage1(e) {
     });
     this.download = 'canvas1.png'
 }
-
 var imageSaver2 = document.getElementById('lnkDownload2');
-
 imageSaver2.addEventListener('click', saveImage2, false);
-
 function saveImage2(e) {
     this.href = canvas2.toDataURL({
         format: 'png',
@@ -576,7 +555,6 @@ function saveImage2(e) {
     });
     this.download = 'canvas2.png'
 }
-
 $("#jsonDownload1").click(function() {
     var json = canvas1.toJSON();
     /*$("#myTextArea").text(JSON.stringify(json));
@@ -588,7 +566,6 @@ $("#jsonDownload1").click(function() {
     this.download = 'json.txt';
     //a.click();
   });
-
 $("#jsonDownload2").click(function() {
     var json = canvas2.toJSON();
     var file = new Blob([JSON.stringify(json)], {
@@ -598,7 +575,6 @@ $("#jsonDownload2").click(function() {
     this.download = 'json.txt';
     //a.click();
   });
-
 $('#jsonload1').change(function(e) {
     var file = e.target.files[0];
     if(!file) return;
@@ -612,7 +588,6 @@ $('#jsonload1').change(function(e) {
     reader.readAsText(file);
     });
     $(this).val(null);
-
   $('#jsonload2').change(function(e) {
     var file = e.target.files[0];
     if(!file) return;
