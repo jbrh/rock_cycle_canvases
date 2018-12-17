@@ -22,30 +22,14 @@
 
 <style>
 
-#exTab1 .tab-content {
-  
-  /*background-color: white;*/
-  /*padding : 5px 15px;*/
+#exTab1 {
+  margin-top: 15px;
   
 }
-
-/* remove border radius for the tab */
-
-/*#exTab1 .nav-pills > li > a {
-  border-radius: 0;
-}
-
- /*change border radius for the tab , apply corners on top*/
-
-/*.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
-  background-color: white;
-}*/
-
 
 canvas {
   border: 1px solid black;
 }
-
 
 .canvas-inputs { 
   display: inline-block; 
@@ -60,28 +44,39 @@ canvas {
   margin-left: 5px;
 }
 
-
-
-
-.nav-tabs {
-    width: 1000px;
+.tab-content {
+    border-left: 1px solid #ddd;
+    padding: 10px;
 }
 
-  #makespace {
-    margin-left: 10px;
-  }
-  .section {
-    padding-bottom: 10px;
+#icon-container {
+    margin-left: 52px;
+    border-left: 1px solid #ddd;
   }
 
-  .section a.thmb {
+.tab-content>.active {
+    margin-left: 5px;
+}
+
+.nav-tabs {
+    margin-bottom: 0;
+}
+
+.nav-tabs>li>a {
+  font-weight: 500;
+}
+
+
+  a.thmb {
     padding: 0px 10px;
     margin: 3px;
     border: 2px solid;
     text-decoration: none;
-    color: blue;
+    color: #337ab7;
     border-color:black;
   }
+
+
   .footer {
   right: 0;
   bottom: 10px;
@@ -125,22 +120,22 @@ canvas {
 
            <h3>Drag icons into canvas to show the formation of quartzite. </h3> 
   
-          <a class="thmb" href="#" onclick="Addtext1()" style="padding: 0px 10px;margin:5px;border: 2px solid;text-decoration: none; color:blue; border-color:black;">Add text</a>
+          <a class="thmb" href="#" onclick="Addtext1()">Add text</a>
 
-          <a class="thmb" href="#" onclick="enableFreeDrawing1()" style="padding: 0px 10px;margin:5px;border: 2px solid; text-decoration: none; color:blue; border-color:black;">Draw mode</a>
+          <a class="thmb" href="#" onclick="enableFreeDrawing1()">Draw mode</a>
  
-            <a class="thmb" href="#" onclick="enableSelection1()" style="padding: 0px 10px; margin:5px;border: 2px solid;text-decoration: none; color:blue; border-color:black;">Select mode</a>
+            <a class="thmb" href="#" onclick="enableSelection1()">Select mode</a>
 
-          <a class="thmb" href="#" onClick="deleteObjects1()" style="padding: 0px 10px;margin:5px;border: 2px solid;text-decoration: none; color:blue; border-color:black;">Delete selection</a>
+          <a class="thmb" href="#" onClick="deleteObjects1()">Delete selection</a>
 
-          <a class="thmb" href="#" onClick="deleteCanvas1()" class="btn btn-info" style="padding: 0px 10px;margin:5px;border: 2px solid;text-decoration: none; color:blue; border-color:black;">Clear canvas</a>
+          <a class="thmb" href="#" onClick="deleteCanvas1()">Clear canvas</a>
 
-          <a class="thmb" href="#" id="lnkDownload1" style="padding: 0px 10px;margin:5px;border: 2px solid;text-decoration: none; color:blue; border-color:black;">Save image</a>
+          <a class="thmb" href="#" id="lnkDownload1">Save image</a>
 
       
      
       <div class="canvas-container1">
-          <canvas id="canvas1" style="margin-top: 8px;" width="1000" height="300"></canvas>
+          <canvas id="canvas1" style="margin-top: 8px;" width="1100" height="300"></canvas>
       </div>
 
       <br>
@@ -162,22 +157,22 @@ canvas {
 
           <h3>Drag icons into canvas to show the formation of gneiss. </h3> 
 
-          <a class="thmb" href="#" onclick="Addtext2()" style="padding: 0px 10px;margin:5px;border: 2px solid;text-decoration: none; color:blue; border-color:black;">Add text</a>
+          <a class="thmb" href="#" onclick="Addtext2()">Add text</a>
 
-          <a class="thmb" href="#" onclick="enableFreeDrawing2()" style="padding: 0px 10px;margin:5px;border: 2px solid; text-decoration: none; color:blue; border-color:black;">Draw mode</a>
+          <a class="thmb" href="#" onclick="enableFreeDrawing2()">Draw mode</a>
  
-          <a class="thmb" href="#" onclick="enableSelection2()" style="padding: 0px 10px; margin:5px;border: 2px solid;text-decoration: none; color:blue; border-color:black;">Select mode</a>
+          <a class="thmb" href="#" onclick="enableSelection2()">Select mode</a>
 
-          <a class="thmb" href="#" onClick="deleteObjects2()" style="padding: 0px 10px;margin:5px;border: 2px solid;text-decoration: none; color:blue; border-color:black;">Delete selection</a>
+          <a class="thmb" href="#" onClick="deleteObjects2()">Delete selection</a>
 
-          <a class="thmb" href="#" onClick="deleteCanvas2()" class="btn btn-info" style="padding: 0px 10px;margin:5px;border: 2px solid;text-decoration: none; color:blue; border-color:black;">Clear canvas</a>
+          <a class="thmb" href="#" onClick="deleteCanvas2()" class="btn btn-info">Clear canvas</a>
 
-          <a class="thmb" href="#" id="lnkDownload2" style="padding: 0px 10px;margin:5px;border: 2px solid;text-decoration: none; color:blue; border-color:black;">Save image</a>
+          <a class="thmb" href="#" id="lnkDownload2">Save image</a>
 
        
 
           <div class="canvas-container2">
-              <canvas id="canvas2" style="margin-top: 8px;" width="1000" height="300"></canvas>
+              <canvas id="canvas2" style="margin-top: 8px;" width="1100" height="300"></canvas>
           </div>
           <br>
 
@@ -198,10 +193,10 @@ canvas {
   
   </div>
 
-<div class="container">
+<div class="container" id="icon-container">
 
 
-  <div class="icons" style="padding: 20px;border: 2px solid;margin-top: 18px;width: 1000px">
+  <div class="icons" style="padding: 20px;border: 1px solid;margin-top: 18px;width: 1000px">
 
 
           <img crossOrigin="Anonymous" draggable="true" src="calciumcarbonate.png" width="70">
@@ -224,13 +219,17 @@ canvas {
           
       </div>
 
+
+
+</div>
+
+<br></br>
+
 <p class="footer">
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Rock Cycle Diagramming</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.physics.drexel.edu/~tim" property="cc:attributionName" rel="cc:attributionURL">Jenny Hoffman</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
 <br/>
 This page uses Fabric.js and JQuery.
 </p>
-
-</div>
 
 
 </body>
