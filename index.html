@@ -23,30 +23,42 @@
 <style>
 
 #exTab1 .tab-content {
-  color : white;
-  background-color: #428bca;
-  padding : 5px 15px;
+  
+  /*background-color: white;*/
+  /*padding : 5px 15px;*/
+  
 }
-
-#exTab1 > ul > li.active {
-  background-color: #428bca;
-  color: purple;
-} 
 
 /* remove border radius for the tab */
 
-#exTab1 .nav-pills > li > a {
+/*#exTab1 .nav-pills > li > a {
   border-radius: 0;
 }
 
-/* change border radius for the tab , apply corners on top*/
+ /*change border radius for the tab , apply corners on top*/
 
-.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
-  background-color: #428bca;
+/*.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+  background-color: white;
+}*/
+
+
+canvas {
+  border: 1px solid black;
 }
 
 
+.canvas-inputs { 
+  display: inline-block; 
+}
 
+.canvas-labels {
+  float: left;
+}
+
+.canvas-inputs {
+  float: left;
+  margin-left: 5px;
+}
 
 
 
@@ -97,7 +109,7 @@
 
 
 <div id="exTab1" class="container"> 
-    <ul  class="nav nav-pills">
+    <ul  class="nav nav-tabs">
       <li class="active">
         <a  class="nav-link active" href="#one" data-toggle="tab" >One</a>
       </li>
@@ -128,17 +140,20 @@
       
      
       <div class="canvas-container1">
-          <canvas id="canvas1" style="border: 2px solid; margin-top: 8px;" width="1000" height="300"></canvas>
+          <canvas id="canvas1" style="margin-top: 8px;" width="1000" height="300"></canvas>
       </div>
 
       <br>
 
-        <a>
-          <label for="canvas-background-picker">Canvas color:</label>
-          <input type="color" id="bg_color1" value="#ffffff">
-        </a>
-
-        <a id="makespace">Upload file<input type="file" id="jsonload1" /></a>
+       
+           <div class="canvas-inputs">
+              <label class="canvas-labels" for="canvas-background-picker">Canvas color:</label>
+              <input class="canvas-inputs" type="color" id="bg_color1" value="#ffffff">
+            
+              <label class="canvas-labels">&nbsp;&nbsp;&nbsp;&nbsp;Upload file</label>
+              <input class="canvas-inputs" type="file" id="jsonload1" />
+            </div>
+        
 
 
     </div>
@@ -162,16 +177,19 @@
        
 
           <div class="canvas-container2">
-              <canvas id="canvas2" style="border: 2px solid; margin-top: 8px;" width="1000" height="300"></canvas>
+              <canvas id="canvas2" style="margin-top: 8px;" width="1000" height="300"></canvas>
           </div>
           <br>
 
-          <a>
-              <label for="canvas-background-picker">Canvas color:</label>
-              <input type="color" id="bg_color2" value="#ffffff">
-            </a>
-
-          <a id="makespace">Upload file<input type="file" id="jsonload2" /></a>
+         
+            <div class="canvas-inputs">
+              <label class="canvas-label" for="canvas-background-picker">Canvas color:</label>
+              <input class="canvas-input" type="color" id="bg_color2" value="#ffffff">
+            
+              <label class="canvas-label">&nbsp;&nbsp;&nbsp;&nbsp;Upload file</label>
+              <input class="canvas-input" type="file" id="jsonload2" />
+            </div>
+         
 
 
       </div>
@@ -221,6 +239,9 @@ This page uses Fabric.js and JQuery.
  
 
 <script>
+
+
+
 function initCanvas1() {
   $('.canvas-container1').each(function(index) {
     var canvasContainer = $(this)[0];
@@ -293,6 +314,8 @@ function initCanvas1() {
   });
 }
 initCanvas1();
+
+
 function initCanvas2() {
   $('.canvas-container2').each(function(index) {
     var canvasContainer = $(this)[0];
@@ -365,12 +388,16 @@ function initCanvas2() {
   });
 }
 initCanvas2();
+
 var canvas1 = new fabric.Canvas('canvas1', {
-       selection: false
+      selection: false
     });
+
 var canvas2 = new fabric.Canvas('canvas2', {
-       selection: false
+      selection: false
     });
+
+
 $('#bg_color1').on('input', function() { 
           canvas1.backgroundColor = $('#bg_color1').val();
           canvas1.renderAll();
